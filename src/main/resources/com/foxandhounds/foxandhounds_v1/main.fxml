@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foxandhounds.foxandhounds_v1.controller.FXMLGameController">
+    <top>
+        <HBox alignment="CENTER" spacing="15.0" style="-fx-background-color: #F5DEB3;" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+                <Label text="AI Difficulty:">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="difficultyComboBox" promptText="Easy" />
+                <Button fx:id="newGameButton" mnemonicParsing="false" onAction="#handleNewGame" text="New Game">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox prefHeight="575.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <VBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label fx:id="statusLabel" alignment="CENTER" text="Fox's turn. Click on the fox to move.">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="turnLabel" alignment="CENTER" text="Fox's Turn">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <VBox style="-fx-background-color: #F5F5DC; -fx-border-color: #8B4513; -fx-border-width: 1;">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <Label text="Game Rules">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="- Fox (orange) moves diagonally in any direction&#10;- Hounds (brown) move diagonally forward only&#10;- Fox wins by reaching the top row&#10;- Hounds win by trapping the fox&#10;- Click on the fox, then click on a valid destination" wrappingWidth="178.13671875">
+                            <font>
+                                <Font size="12.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <fx:include fx:id="boardPane" source="board.fxml" />
+    </center>
+</BorderPane>

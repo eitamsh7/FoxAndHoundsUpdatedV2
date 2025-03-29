@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane fx:id="boardGrid" alignment="CENTER" style="-fx-background-color: #8B4513; -fx-padding: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.foxandhounds.foxandhounds_v1.controller.FXMLBoardController">
+    <!-- Board cells will be generated programmatically -->
+</GridPane>
